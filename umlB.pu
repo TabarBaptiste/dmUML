@@ -1,0 +1,40 @@
+@startuml tt
+
+class Groupe {
+    id : int
+    nom : string
+}
+
+class Etape {
+    id : int
+    date : date
+    bilan : string
+}
+
+class DiagnosticScenique {
+    appreciation : string
+}
+
+class TravailScenique {
+    duree : int
+    intervenant : string
+}
+
+class EncadrementTechnique {
+    duree : int
+    partenaire : string
+    ville : string
+    code_postal : string
+}
+
+class PremierePartie {
+    concert : string
+}
+
+Groupe "1" --> "*" Etape
+Etape <|-- DiagnosticScenique
+Etape <|-- TravailScenique
+Etape <|-- EncadrementTechnique
+Etape <|-- PremierePartie
+
+@enduml
